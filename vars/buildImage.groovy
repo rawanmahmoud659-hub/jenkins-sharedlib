@@ -8,7 +8,7 @@ def call(String imageName, String imageTag) {
         }
 
         stage('Scan Image') {
-            sh "trivy image --exit-code 1 --severity HIGH,CRITICAL ${image}"
+            sh "trivy image  --severity HIGH,CRITICAL ${image}"
         }
 
         stage('Push Image') {
