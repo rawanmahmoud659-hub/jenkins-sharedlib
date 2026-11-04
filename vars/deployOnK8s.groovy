@@ -1,6 +1,6 @@
 def call(String imageName, String newTag, String deploymentFile, String server) {
     withCredentials([
-        string(credentialId: 'kubetoken', variable: 'TOKEN')
+        string(credentialsId: 'kubetoken', variable: 'TOKEN')
     ]) {
         sh """
             sed -i 's|image: ${imageName}:.*|image: ${imageName}:${newTag}|' ${deploymentFile}
