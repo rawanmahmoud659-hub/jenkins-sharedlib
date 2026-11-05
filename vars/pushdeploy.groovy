@@ -13,7 +13,7 @@ def call(String imageName, String newTag, String deploymentFile) {
             git commit -m "Update image to ${newTag}"
 
             set +x
-            git push https://\$USER:\$TOKEN@github.com/rawanmahmoud659-hub/ivolve-lab.git HEAD:main
+            git push https://\$USER:\$TOKEN@github.com/rawanmahmoud659-hub/demoapp.git HEAD:main
         """
     }
 }
