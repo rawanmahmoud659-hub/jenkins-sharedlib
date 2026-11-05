@@ -1,7 +1,7 @@
 
 def call(String imageName, String newTag, String deploymentFile) {
     withCredentials([
-        usernamePassword(credentialsId: 'github-https', usernameVariable: 'USER', passwordVariable: 'TOKEN')
+        usernamePassword(credentialsId: 'github', usernameVariable: 'USER', passwordVariable: 'TOKEN')
     ]) {
         sh """
             sed -i 's|image: ${imageName}:.*|image: ${imageName}:${newTag}|' ${deploymentFile}
